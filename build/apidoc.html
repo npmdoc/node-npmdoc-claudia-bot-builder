@@ -1,0 +1,4169 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >claudia-bot-builder (v2.15.0)</a>
+</h1>
+<h4>Create chat-bots for various platforms and deploy to AWS Lambda quickly</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.claudia-bot-builder">module claudia-bot-builder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.claudia-bot-builder">
+            function <span class="apidocSignatureSpan"></span>claudia-bot-builder
+            <span class="apidocSignatureSpan">(messageHandler, options, optionalLogError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.AlexaTemplate">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.</span>AlexaTemplate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.bot_builder">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.</span>bot_builder
+            <span class="apidocSignatureSpan">(messageHandler, options, optionalLogError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.slackDelayedReply">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.</span>slackDelayedReply
+            <span class="apidocSignatureSpan">(message, response)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.slackTemplate">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.</span>slackTemplate
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">claudia-bot-builder.</span>env_utils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">claudia-bot-builder.</span>fbTemplate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">claudia-bot-builder.</span>skypeTemplate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">claudia-bot-builder.</span>telegramTemplate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">claudia-bot-builder.</span>token</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">claudia-bot-builder.</span>viberTemplate</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.claudia-bot-builder.bot_builder">module claudia-bot-builder.bot_builder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.bot_builder.bot_builder">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.</span>bot_builder
+            <span class="apidocSignatureSpan">(messageHandler, options, optionalLogError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.bot_builder.AlexaTemplate">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.bot_builder.</span>AlexaTemplate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.bot_builder.slackDelayedReply">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.bot_builder.</span>slackDelayedReply
+            <span class="apidocSignatureSpan">(message, response)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.bot_builder.slackTemplate">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.bot_builder.</span>slackTemplate
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">claudia-bot-builder.bot_builder.</span>fbTemplate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">claudia-bot-builder.bot_builder.</span>skypeTemplate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">claudia-bot-builder.bot_builder.</span>telegramTemplate</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">claudia-bot-builder.bot_builder.</span>viberTemplate</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.claudia-bot-builder.env_utils">module claudia-bot-builder.env_utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.env_utils.decode">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.env_utils.</span>decode
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.env_utils.encode">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.env_utils.</span>encode
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.claudia-bot-builder.fbTemplate">module claudia-bot-builder.fbTemplate</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.Attachment">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Attachment
+            <span class="apidocSignatureSpan">(url, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.Audio">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Audio
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.BaseTemplate">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>BaseTemplate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.Button">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Button
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.ChatAction">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>ChatAction
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.File">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>File
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.Generic">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Generic
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.Image">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Image
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.List">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>List
+            <span class="apidocSignatureSpan">(topElementStyle)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.Pause">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Pause
+            <span class="apidocSignatureSpan">(milliseconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.Receipt">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Receipt
+            <span class="apidocSignatureSpan">(name, orderNumber, currency, paymentMethod)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.Text">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Text
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.Video">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Video
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.attachment">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>attachment
+            <span class="apidocSignatureSpan">(url, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.audio">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>audio
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.button">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>button
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.file">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>file
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.generic">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>generic
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.image">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>image
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.receipt">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>receipt
+            <span class="apidocSignatureSpan">(name, orderNumber, currency, paymentMethod)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.text">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>text
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.fbTemplate.video">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>video
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.claudia-bot-builder.skypeTemplate">module claudia-bot-builder.skypeTemplate</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.skypeTemplate.Carousel">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.skypeTemplate.</span>Carousel
+            <span class="apidocSignatureSpan">(summary, text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.skypeTemplate.Photo">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.skypeTemplate.</span>Photo
+            <span class="apidocSignatureSpan">(base64Photo)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.skypeTemplate.Typing">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.skypeTemplate.</span>Typing
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.claudia-bot-builder.telegramTemplate">module claudia-bot-builder.telegramTemplate</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.telegramTemplate.Audio">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Audio
+            <span class="apidocSignatureSpan">(audio, caption, duration)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.telegramTemplate.ChatAction">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>ChatAction
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.telegramTemplate.Contact">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Contact
+            <span class="apidocSignatureSpan">(phone, firstName, lastName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.telegramTemplate.File">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>File
+            <span class="apidocSignatureSpan">(document, caption)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.telegramTemplate.Location">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Location
+            <span class="apidocSignatureSpan">(latitude, longitude)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.telegramTemplate.Pause">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Pause
+            <span class="apidocSignatureSpan">(miliseconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.telegramTemplate.Photo">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Photo
+            <span class="apidocSignatureSpan">(photo, caption)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.telegramTemplate.Sticker">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Sticker
+            <span class="apidocSignatureSpan">(sticker)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.telegramTemplate.Text">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Text
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.telegramTemplate.Venue">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Venue
+            <span class="apidocSignatureSpan">(latitude, longitude, title, address)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.claudia-bot-builder.token">module claudia-bot-builder.token</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.token.clearToken">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.token.</span>clearToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.token.getToken">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.token.</span>getToken
+            <span class="apidocSignatureSpan">(appId, appSecret)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.claudia-bot-builder.viberTemplate">module claudia-bot-builder.viberTemplate</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.viberTemplate.Contact">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>Contact
+            <span class="apidocSignatureSpan">(name, phoneNumber)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.viberTemplate.File">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>File
+            <span class="apidocSignatureSpan">(media, size, fileName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.viberTemplate.Location">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>Location
+            <span class="apidocSignatureSpan">(latitude, longitude)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.viberTemplate.Photo">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>Photo
+            <span class="apidocSignatureSpan">(photo, caption)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.viberTemplate.Sticker">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>Sticker
+            <span class="apidocSignatureSpan">(stickerId)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.viberTemplate.Text">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>Text
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.viberTemplate.Url">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>Url
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.claudia-bot-builder.viberTemplate.Video">
+            function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>Video
+            <span class="apidocSignatureSpan">(media, size, duration)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.claudia-bot-builder" id="apidoc.module.claudia-bot-builder">module claudia-bot-builder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.claudia-bot-builder" id="apidoc.element.claudia-bot-builder.claudia-bot-builder">
+        function <span class="apidocSignatureSpan"></span>claudia-bot-builder
+        <span class="apidocSignatureSpan">(messageHandler, options, optionalLogError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function botBuilder(messageHandler, options, optionalLogError) {
+  logError = optionalLogError || logError;
+
+  const api = new ApiBuilder(),
+    messageHandlerPromise = function (message, originalApiBuilderRequest) {
+      return Promise.resolve(message).then(message =&#x3e; messageHandler(message, originalApiBuilderRequest));
+    };
+
+  api.get(&#x27;/&#x27;, () =&#x3e; &#x27;Ok&#x27;);
+
+  let isEnabled = function isEnabled(platform) {
+    return !options || !options.platforms || options.platforms.indexOf(platform) &#x3e; -1;
+  };
+
+  if (isEnabled(&#x27;facebook&#x27;)) {
+    fbSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;slackSlashCommand&#x27;)) {
+    slackSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;telegram&#x27;)) {
+    telegramSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;skype&#x27;)) {
+    skypeSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;twilio&#x27;)) {
+    twilioSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;kik&#x27;)) {
+    kikSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;groupme&#x27;)) {
+    groupmeSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;line&#x27;)) {
+    lineSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;viber&#x27;)) {
+    viberSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;alexa&#x27;)) {
+    alexaSetup(api, messageHandlerPromise, logError);
+  }
+
+  return api;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.AlexaTemplate" id="apidoc.element.claudia-bot-builder.AlexaTemplate">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.</span>AlexaTemplate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class AlexaMessageBuilder {
+  constructor() {
+    this.template = {
+      version: &#x27;1.0&#x27;,
+      response: {
+        shouldEndSession: true
+      }
+    }
+  }
+
+  addVersion(versionString) {
+    if (typeof versionString !== &#x27;string&#x27;)
+      throw new Error(&#x27;You need to provide version as a string for addVersion method, ie. &#x22;1.0&#x22;&#x27;)
+
+    this.template.version = versionString
+
+    return this
+  }
+
+  addSessionAttribute(key, value) {
+    if (typeof key !== &#x27;string&#x27; || typeof value === &#x27;undefined&#x27;)
+      throw new Error(&#x27;You need to provide both key and value for addSessionAttribute method&#x27;)
+
+    if (!this.template.sessionAttributes)
+      this.template.sessionAttributes = {}
+
+    this.template.sessionAttributes[key] = value
+
+    return this
+  }
+
+  addOutputSpeech(type, text, isReprompt) {
+    if ([&#x27;PlainText&#x27;, &#x27;SSML&#x27;].indexOf(type) &#x3c; 0)
+      throw new Error(&#x27;You need to provide type and it can be either &#x22;PlainText&#x22; or &#x22;SSML&#x22; for addOutputSpeech method&#x27;)
+
+    if (typeof text !== &#x27;string&#x27;)
+      throw new Error(&#x27;You need to provide text as a string for addText, addSSML and addOutputSpeech methods&#x27;)
+
+    if (typeof this.template.response.outputSpeech === &#x27;object&#x27; &#x26;&#x26; !isReprompt)
+      throw new Error(&#x27;You can call addText or addSSML only once&#x27;)
+
+    let obj = this.template.response
+    if (isReprompt) {
+      this.template.response.reprompt = {}
+      obj = obj.reprompt
+    }
+
+    obj.outputSpeech = {
+      type: type
+    }
+
+    obj.outputSpeech[type === &#x27;SSML&#x27; ? &#x27;ssml&#x27; : &#x27;text&#x27;] = text
+
+    return this
+  }
+
+  addText(text) {
+    return this.addOutputSpeech(&#x27;PlainText&#x27;, text)
+  }
+
+  addSSML(ssmlString) {
+    return this.addOutputSpeech(&#x27;SSML&#x27;, ssmlString)
+  }
+
+  addRepromptText(text) {
+    return this.addOutputSpeech(&#x27;PlainText&#x27;, text, true)
+  }
+
+  addRepromptSSML(ssmlString) {
+    return this.addOutputSpeech(&#x27;SSML&#x27;, ssmlString, true)
+  }
+
+  addSimpleCard(title, content) {
+    if (typeof title !== &#x27;string&#x27; || typeof content !== &#x27;string&#x27;)
+      throw new Error(&#x27;You need to provide title and content as strings for addSimpleCard method&#x27;)
+
+    this.template.response.card = {
+      type: &#x27;Simple&#x27;,
+      title: title,
+      content: content
+    }
+
+    return this
+  }
+
+  addStandardCard(title, text, imageObject) {
+    this.template.response.card = {
+      type: &#x27;Standard&#x27;,
+      title: title,
+      text: text
+    }
+
+    if (typeof imageObject === &#x27;object&#x27; &#x26;&#x26; (imageObject.smallImageUrl || imageObject.largeImageUrl))
+      this.template.response.card.image = imageObject
+
+    return this
+  }
+
+  keepSession() {
+    this.template.response.shouldEndSession = false
+
+    return this
+  }
+
+  get() {
+    return this.template
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.bot_builder" id="apidoc.element.claudia-bot-builder.bot_builder">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.</span>bot_builder
+        <span class="apidocSignatureSpan">(messageHandler, options, optionalLogError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function botBuilder(messageHandler, options, optionalLogError) {
+  logError = optionalLogError || logError;
+
+  const api = new ApiBuilder(),
+    messageHandlerPromise = function (message, originalApiBuilderRequest) {
+      return Promise.resolve(message).then(message =&#x3e; messageHandler(message, originalApiBuilderRequest));
+    };
+
+  api.get(&#x27;/&#x27;, () =&#x3e; &#x27;Ok&#x27;);
+
+  let isEnabled = function isEnabled(platform) {
+    return !options || !options.platforms || options.platforms.indexOf(platform) &#x3e; -1;
+  };
+
+  if (isEnabled(&#x27;facebook&#x27;)) {
+    fbSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;slackSlashCommand&#x27;)) {
+    slackSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;telegram&#x27;)) {
+    telegramSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;skype&#x27;)) {
+    skypeSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;twilio&#x27;)) {
+    twilioSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;kik&#x27;)) {
+    kikSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;groupme&#x27;)) {
+    groupmeSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;line&#x27;)) {
+    lineSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;viber&#x27;)) {
+    viberSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;alexa&#x27;)) {
+    alexaSetup(api, messageHandlerPromise, logError);
+  }
+
+  return api;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.slackDelayedReply" id="apidoc.element.claudia-bot-builder.slackDelayedReply">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.</span>slackDelayedReply
+        <span class="apidocSignatureSpan">(message, response)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function slackDelayedReply(message, response) {
+  if (!message || !message.originalRequest || !message.originalRequest.response_url || !response)
+    throw new Error(&#x27;Original bot request and response are required&#x27;);
+
+  return rp.post(message.originalRequest.response_url, {
+    headers: {
+      &#x27;Content-Type&#x27;: &#x27;application/json&#x27;
+    },
+    body: JSON.stringify(formatReply(response))
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.slackTemplate" id="apidoc.element.claudia-bot-builder.slackTemplate">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.</span>slackTemplate
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class SlackTemplate {
+  constructor(text) {
+    this.template = {
+      mrkdwn: true
+    };
+    this.template.attachments = [];
+
+    if (text)
+      this.template.text = text;
+  }
+
+  replaceOriginal(value) {
+    this.template.replace_original = !!value;
+    return this;
+  }
+
+  disableMarkdown(value) {
+    if (value)
+      this.template.mrkdwn = !value;
+
+    return this;
+  }
+
+  // This works for Slash commands only
+  channelMessage(value) {
+    if (value &#x26;&#x26; value !== &#x27;ephemeral&#x27;)
+      this.template.response_type = &#x27;in_channel&#x27;;
+
+    return this;
+  }
+
+  getLatestAttachment() {
+    if (!this.template.attachments.length)
+      throw new Error(&#x27;Add at least one attachment first&#x27;);
+
+    return this.template.attachments[this.template.attachments.length - 1];
+  }
+
+  addAttachment(callbackId, fallback) {
+    if (this.template.attachments.length === 20)
+      throw new Error(&#x27;You can not add more than 20 attachments&#x27;);
+
+    const attachment = {
+      actions: []
+    };
+
+    if (callbackId)
+      attachment.callback_id = callbackId;
+
+    attachment.fallback = fallback || &#x27;Slack told us that you are not able to see this attachment 😢&#x27;;
+
+    this.template.attachments.push(attachment);
+
+    return this;
+  }
+
+  addTitle(text, link) {
+    if (!text)
+      throw new Error(&#x27;Title text is required for addTitle method&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.title = text;
+    if (isUrl(link))
+      attachment.title_link = link;
+
+    return this;
+  }
+
+  addText(text) {
+    if (!text)
+      throw new Error(&#x27;Text is required for addText method&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.text = text;
+
+    return this;
+  }
+
+  addPretext(text) {
+    if (!text)
+      throw new Error(&#x27;Text is required for addPretext method&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.pretext = text;
+
+    return this;
+  }
+
+  addImage(url) {
+    if (!isUrl(url))
+      throw new Error(&#x27;addImage method requires a valid URL&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.image_url = url;
+
+    return this;
+  }
+
+  addThumbnail(url) {
+    if (!isUrl(url))
+      throw new Error(&#x27;addThumbnail method requires a valid URL&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.thumb_url = url;
+
+    return this;
+  }
+
+  addAuthor(name, icon, link) {
+    if (!name)
+      throw new Error(&#x27;Name is required for addAuthor method&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.author_name = name;
+
+    if (icon)
+      attachment.author_icon = icon;
+
+    if (isUrl(link))
+      attachment.author_link = link;
+
+    return this;
+  }
+
+  addFooter(text, icon) {
+    if (!text)
+      throw new Error(&#x27;Text is required for addFooter method&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.footer = text;
+
+    if (icon)
+      attachment.footer_icon = icon;
+
+    return this;
+  }
+
+  addColor(color) {
+    if (!color)
+      throw new Error(&#x27;Color is required for addColor method&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.color = color;
+
+    return this;
+  }
+
+  addTimestamp(timestamp) {
+    if (!(timestamp instanceof Date))
+      throw new Error(&#x27;Timestamp needs to be a valid Date object&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.ts = timestamp.getTime();
+
+    return this;
+  }
+
+  addField(title, value, isShort) {
+    if (!title || !value)
+      throw new Error(&#x27;Title and value are required for addField method&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    if (!attachment.fields)
+      attachment.fields = [];
+
+    attachment.fields.push({
+      title: title,
+      value: value,
+      short: !!isShort
+    });
+
+    return this;
+  }
+
+  addAction(text, name, value, style) {
+    if (this.getLatestAttachment().actions.length === 5)
+      throw new Error(&#x27;You can not add more than 5 actions&#x27;);
+
+    if (!text || !name || !value)
+      throw new Error(&#x27;Text, name and value are requeired for addAction method&#x27;);
+
+    const action = {
+      text: text,
+      name: name,
+      value: value, ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.claudia-bot-builder.bot_builder" id="apidoc.module.claudia-bot-builder.bot_builder">module claudia-bot-builder.bot_builder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.bot_builder.bot_builder" id="apidoc.element.claudia-bot-builder.bot_builder.bot_builder">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.</span>bot_builder
+        <span class="apidocSignatureSpan">(messageHandler, options, optionalLogError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function botBuilder(messageHandler, options, optionalLogError) {
+  logError = optionalLogError || logError;
+
+  const api = new ApiBuilder(),
+    messageHandlerPromise = function (message, originalApiBuilderRequest) {
+      return Promise.resolve(message).then(message =&#x3e; messageHandler(message, originalApiBuilderRequest));
+    };
+
+  api.get(&#x27;/&#x27;, () =&#x3e; &#x27;Ok&#x27;);
+
+  let isEnabled = function isEnabled(platform) {
+    return !options || !options.platforms || options.platforms.indexOf(platform) &#x3e; -1;
+  };
+
+  if (isEnabled(&#x27;facebook&#x27;)) {
+    fbSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;slackSlashCommand&#x27;)) {
+    slackSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;telegram&#x27;)) {
+    telegramSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;skype&#x27;)) {
+    skypeSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;twilio&#x27;)) {
+    twilioSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;kik&#x27;)) {
+    kikSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;groupme&#x27;)) {
+    groupmeSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;line&#x27;)) {
+    lineSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;viber&#x27;)) {
+    viberSetup(api, messageHandlerPromise, logError);
+  }
+  if (isEnabled(&#x27;alexa&#x27;)) {
+    alexaSetup(api, messageHandlerPromise, logError);
+  }
+
+  return api;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.bot_builder.AlexaTemplate" id="apidoc.element.claudia-bot-builder.bot_builder.AlexaTemplate">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.bot_builder.</span>AlexaTemplate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class AlexaMessageBuilder {
+  constructor() {
+    this.template = {
+      version: &#x27;1.0&#x27;,
+      response: {
+        shouldEndSession: true
+      }
+    }
+  }
+
+  addVersion(versionString) {
+    if (typeof versionString !== &#x27;string&#x27;)
+      throw new Error(&#x27;You need to provide version as a string for addVersion method, ie. &#x22;1.0&#x22;&#x27;)
+
+    this.template.version = versionString
+
+    return this
+  }
+
+  addSessionAttribute(key, value) {
+    if (typeof key !== &#x27;string&#x27; || typeof value === &#x27;undefined&#x27;)
+      throw new Error(&#x27;You need to provide both key and value for addSessionAttribute method&#x27;)
+
+    if (!this.template.sessionAttributes)
+      this.template.sessionAttributes = {}
+
+    this.template.sessionAttributes[key] = value
+
+    return this
+  }
+
+  addOutputSpeech(type, text, isReprompt) {
+    if ([&#x27;PlainText&#x27;, &#x27;SSML&#x27;].indexOf(type) &#x3c; 0)
+      throw new Error(&#x27;You need to provide type and it can be either &#x22;PlainText&#x22; or &#x22;SSML&#x22; for addOutputSpeech method&#x27;)
+
+    if (typeof text !== &#x27;string&#x27;)
+      throw new Error(&#x27;You need to provide text as a string for addText, addSSML and addOutputSpeech methods&#x27;)
+
+    if (typeof this.template.response.outputSpeech === &#x27;object&#x27; &#x26;&#x26; !isReprompt)
+      throw new Error(&#x27;You can call addText or addSSML only once&#x27;)
+
+    let obj = this.template.response
+    if (isReprompt) {
+      this.template.response.reprompt = {}
+      obj = obj.reprompt
+    }
+
+    obj.outputSpeech = {
+      type: type
+    }
+
+    obj.outputSpeech[type === &#x27;SSML&#x27; ? &#x27;ssml&#x27; : &#x27;text&#x27;] = text
+
+    return this
+  }
+
+  addText(text) {
+    return this.addOutputSpeech(&#x27;PlainText&#x27;, text)
+  }
+
+  addSSML(ssmlString) {
+    return this.addOutputSpeech(&#x27;SSML&#x27;, ssmlString)
+  }
+
+  addRepromptText(text) {
+    return this.addOutputSpeech(&#x27;PlainText&#x27;, text, true)
+  }
+
+  addRepromptSSML(ssmlString) {
+    return this.addOutputSpeech(&#x27;SSML&#x27;, ssmlString, true)
+  }
+
+  addSimpleCard(title, content) {
+    if (typeof title !== &#x27;string&#x27; || typeof content !== &#x27;string&#x27;)
+      throw new Error(&#x27;You need to provide title and content as strings for addSimpleCard method&#x27;)
+
+    this.template.response.card = {
+      type: &#x27;Simple&#x27;,
+      title: title,
+      content: content
+    }
+
+    return this
+  }
+
+  addStandardCard(title, text, imageObject) {
+    this.template.response.card = {
+      type: &#x27;Standard&#x27;,
+      title: title,
+      text: text
+    }
+
+    if (typeof imageObject === &#x27;object&#x27; &#x26;&#x26; (imageObject.smallImageUrl || imageObject.largeImageUrl))
+      this.template.response.card.image = imageObject
+
+    return this
+  }
+
+  keepSession() {
+    this.template.response.shouldEndSession = false
+
+    return this
+  }
+
+  get() {
+    return this.template
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.bot_builder.slackDelayedReply" id="apidoc.element.claudia-bot-builder.bot_builder.slackDelayedReply">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.bot_builder.</span>slackDelayedReply
+        <span class="apidocSignatureSpan">(message, response)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function slackDelayedReply(message, response) {
+  if (!message || !message.originalRequest || !message.originalRequest.response_url || !response)
+    throw new Error(&#x27;Original bot request and response are required&#x27;);
+
+  return rp.post(message.originalRequest.response_url, {
+    headers: {
+      &#x27;Content-Type&#x27;: &#x27;application/json&#x27;
+    },
+    body: JSON.stringify(formatReply(response))
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.bot_builder.slackTemplate" id="apidoc.element.claudia-bot-builder.bot_builder.slackTemplate">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.bot_builder.</span>slackTemplate
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class SlackTemplate {
+  constructor(text) {
+    this.template = {
+      mrkdwn: true
+    };
+    this.template.attachments = [];
+
+    if (text)
+      this.template.text = text;
+  }
+
+  replaceOriginal(value) {
+    this.template.replace_original = !!value;
+    return this;
+  }
+
+  disableMarkdown(value) {
+    if (value)
+      this.template.mrkdwn = !value;
+
+    return this;
+  }
+
+  // This works for Slash commands only
+  channelMessage(value) {
+    if (value &#x26;&#x26; value !== &#x27;ephemeral&#x27;)
+      this.template.response_type = &#x27;in_channel&#x27;;
+
+    return this;
+  }
+
+  getLatestAttachment() {
+    if (!this.template.attachments.length)
+      throw new Error(&#x27;Add at least one attachment first&#x27;);
+
+    return this.template.attachments[this.template.attachments.length - 1];
+  }
+
+  addAttachment(callbackId, fallback) {
+    if (this.template.attachments.length === 20)
+      throw new Error(&#x27;You can not add more than 20 attachments&#x27;);
+
+    const attachment = {
+      actions: []
+    };
+
+    if (callbackId)
+      attachment.callback_id = callbackId;
+
+    attachment.fallback = fallback || &#x27;Slack told us that you are not able to see this attachment 😢&#x27;;
+
+    this.template.attachments.push(attachment);
+
+    return this;
+  }
+
+  addTitle(text, link) {
+    if (!text)
+      throw new Error(&#x27;Title text is required for addTitle method&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.title = text;
+    if (isUrl(link))
+      attachment.title_link = link;
+
+    return this;
+  }
+
+  addText(text) {
+    if (!text)
+      throw new Error(&#x27;Text is required for addText method&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.text = text;
+
+    return this;
+  }
+
+  addPretext(text) {
+    if (!text)
+      throw new Error(&#x27;Text is required for addPretext method&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.pretext = text;
+
+    return this;
+  }
+
+  addImage(url) {
+    if (!isUrl(url))
+      throw new Error(&#x27;addImage method requires a valid URL&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.image_url = url;
+
+    return this;
+  }
+
+  addThumbnail(url) {
+    if (!isUrl(url))
+      throw new Error(&#x27;addThumbnail method requires a valid URL&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.thumb_url = url;
+
+    return this;
+  }
+
+  addAuthor(name, icon, link) {
+    if (!name)
+      throw new Error(&#x27;Name is required for addAuthor method&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.author_name = name;
+
+    if (icon)
+      attachment.author_icon = icon;
+
+    if (isUrl(link))
+      attachment.author_link = link;
+
+    return this;
+  }
+
+  addFooter(text, icon) {
+    if (!text)
+      throw new Error(&#x27;Text is required for addFooter method&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.footer = text;
+
+    if (icon)
+      attachment.footer_icon = icon;
+
+    return this;
+  }
+
+  addColor(color) {
+    if (!color)
+      throw new Error(&#x27;Color is required for addColor method&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.color = color;
+
+    return this;
+  }
+
+  addTimestamp(timestamp) {
+    if (!(timestamp instanceof Date))
+      throw new Error(&#x27;Timestamp needs to be a valid Date object&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    attachment.ts = timestamp.getTime();
+
+    return this;
+  }
+
+  addField(title, value, isShort) {
+    if (!title || !value)
+      throw new Error(&#x27;Title and value are required for addField method&#x27;);
+
+    const attachment = this.getLatestAttachment();
+    if (!attachment.fields)
+      attachment.fields = [];
+
+    attachment.fields.push({
+      title: title,
+      value: value,
+      short: !!isShort
+    });
+
+    return this;
+  }
+
+  addAction(text, name, value, style) {
+    if (this.getLatestAttachment().actions.length === 5)
+      throw new Error(&#x27;You can not add more than 5 actions&#x27;);
+
+    if (!text || !name || !value)
+      throw new Error(&#x27;Text, name and value are requeired for addAction method&#x27;);
+
+    const action = {
+      text: text,
+      name: name,
+      value: value, ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.claudia-bot-builder.env_utils" id="apidoc.module.claudia-bot-builder.env_utils">module claudia-bot-builder.env_utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.env_utils.decode" id="apidoc.element.claudia-bot-builder.env_utils.decode">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.env_utils.</span>decode
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode(str) {
+  return new Buffer(str.replace(/\-/g, &#x27;+&#x27;), &#x27;base64&#x27;).toString(&#x27;utf8&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+module.exports = function alexaSetup(api, bot, logError, optionalParser, optionalResponder) {
+let parser = optionalParser || alexaParse;
+let responder = optionalResponder || alexaReply;
+
+api.post(&#x27;/alexa&#x27;, request =&#x3e; {
+  return bot(parser(request.body), request)
+    .then(botReply =&#x3e; responder(botReply, envUtils.<span class="apidocCodeKeywordSpan">decode</span>(request.env.alexaAppName
+)))
+    .catch(logError);
+});
+
+api.addPostDeployStep(&#x27;alexa&#x27;, (options, lambdaDetails, utils) =&#x3e; {
+  return Promise.resolve().then(() =&#x3e; {
+    if (options[&#x27;configure-alexa-skill&#x27;]) {
+      console.log(`\n\n${color.green}Alexa skill command setup${color.reset}\n`);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.env_utils.encode" id="apidoc.element.claudia-bot-builder.env_utils.encode">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.env_utils.</span>encode
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode(str) {
+  return new Buffer(str).toString(&#x27;base64&#x27;).replace(/\+/g, &#x27;-&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+        return prompt([&#x27;Alexa bot name&#x27;])
+.then(results =&#x3e; {
+  const deployment = {
+    restApiId: lambdaDetails.apiId,
+    stageName: lambdaDetails.alias,
+    variables: {
+      alexaAppName: envUtils.<span class="apidocCodeKeywordSpan">encode</span>(results[&#x27;Alexa bot name&#x27;])
+    }
+  };
+
+  console.log(`\n`);
+
+  return utils.apiGatewayPromise.createDeploymentPromise(deployment);
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.claudia-bot-builder.fbTemplate" id="apidoc.module.claudia-bot-builder.fbTemplate">module claudia-bot-builder.fbTemplate</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.Attachment" id="apidoc.element.claudia-bot-builder.fbTemplate.Attachment">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Attachment
+        <span class="apidocSignatureSpan">(url, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Attachment extends FacebookTemplate {
+  constructor(url, type) {
+    super();
+
+    if (!url || !isUrl(url))
+      throw new Error(&#x27;Attachment template requires a valid URL as a first parameter&#x27;);
+
+    this.template = {
+      attachment: {
+        type: type || &#x27;file&#x27;,
+        payload: {
+          url: url
+        }
+      }
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.Audio" id="apidoc.element.claudia-bot-builder.fbTemplate.Audio">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Audio
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Audio extends FacebookTemplate {
+  constructor(url) {
+    super();
+
+    if (!url || !isUrl(url))
+      throw new Error(&#x27;Audio template requires a valid URL as a first parameter&#x27;);
+
+    this.template = {
+      attachment: {
+        type: &#x27;audio&#x27;,
+        payload: {
+          url: url
+        }
+      }
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  });
+});
+  });
+
+  describe(&#x27;Audio&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Audio</span>(&#x27;foo&#x27;);
+  expect(typeof formatMessage.Audio).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Audio).toBeTruthy();
+});
+
+it(&#x27;should throw an error if audio url or id is not provided&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.Audio()).toThrowError(&#x27;Audio needs to be an ID or URL for Telegram Audio method&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.BaseTemplate" id="apidoc.element.claudia-bot-builder.fbTemplate.BaseTemplate">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>BaseTemplate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class FacebookTemplate {
+  constructor() {
+    this.template = {};
+  }
+
+  setNotificationType(type) {
+    if (type !== &#x27;REGULAR&#x27; &#x26;&#x26; type !== &#x27;SILENT_PUSH&#x27; &#x26;&#x26; type !== &#x27;NO_PUSH&#x27;)
+      throw new Error(&#x27;Notification type must be one of REGULAR, SILENT_PUSH, or NO_PUSH&#x27;);
+    this.template.notification_type = type;
+    return this;
+  }
+
+  addQuickReply(text, payload, imageUrl) {
+    if (!text || !payload)
+      throw new Error(&#x27;Both text and payload are required for a quick reply&#x27;);
+
+    if (payload.length &#x3e; 1000)
+      throw new Error(&#x27;Payload can not be more than 1000 characters long&#x27;);
+    if (imageUrl &#x26;&#x26; !isUrl(imageUrl))
+      throw new Error(&#x27;Image has a bad url&#x27;);
+
+    if (!this.template.quick_replies)
+      this.template.quick_replies = [];
+
+    if (this.template.quick_replies.length === 11)
+      throw new Error(&#x27;There can not be more than 11 quick replies&#x27;);
+
+    if (text.length &#x3e; 20)
+      text = breakText(text, 20)[0];
+
+    let quickReply = {
+      content_type: &#x27;text&#x27;,
+      title: text,
+      payload: payload
+    };
+
+    if (imageUrl) quickReply.image_url = imageUrl;
+
+    this.template.quick_replies.push(quickReply);
+
+    return this;
+  }
+
+  addQuickReplyLocation() {
+    if (!this.template.quick_replies)
+      this.template.quick_replies = [];
+
+    if (this.template.quick_replies.length === 11)
+      throw new Error(&#x27;There can not be more than 11 quick replies&#x27;);
+
+    let quickReply = {
+      content_type: &#x27;location&#x27;
+    };
+
+    this.template.quick_replies.push(quickReply);
+
+    return this;
+  }
+
+  get() {
+    return this.template;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.Button" id="apidoc.element.claudia-bot-builder.fbTemplate.Button">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Button
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Button extends FacebookTemplate {
+  constructor(text) {
+    super();
+
+    if (!text)
+      throw new Error(&#x27;Button template text cannot be empty&#x27;);
+
+    if (text.length &#x3e; 640)
+      throw new Error(&#x27;Button template text cannot be longer than 640 characters&#x27;);
+
+    this.template = {
+      attachment: {
+        type: &#x27;template&#x27;,
+        payload: {
+          template_type: &#x27;button&#x27;,
+          text: text,
+          buttons: []
+        }
+      }
+    };
+  }
+
+  addButtonByType(title, value, type, options) {
+    if (!title)
+      throw new Error(&#x27;Button title cannot be empty&#x27;);
+
+    if (this.template.attachment.payload.buttons.length === 3)
+      throw new Error(&#x27;3 buttons are already added and that\&#x27;s the maximum&#x27;);
+
+    const button = {
+      title: title,
+      type: type || &#x27;postback&#x27;
+    };
+
+    if (type === &#x27;web_url&#x27;) {
+      button.url = value;
+    } else if (type === &#x27;account_link&#x27;) {
+      delete button.title;
+      button.url = value;
+    } else if (type === &#x27;phone_number&#x27;) {
+      button.payload = value;
+    } else if (type === &#x27;payment&#x27;) {
+      button.payload = value;
+      button.payment_summary = options.paymentSummary;
+    } else if (type === &#x27;element_share&#x27; || type === &#x27;account_unlink&#x27;) {
+      delete button.title;
+      if (type === &#x27;element_share&#x27; &#x26;&#x26; options &#x26;&#x26; typeof options.shareContent)
+        button.share_contents = options.shareContent;
+    } else {
+      button.type = &#x27;postback&#x27;;
+      button.payload = value;
+    }
+
+    this.template.attachment.payload.buttons.push(button);
+
+    return this;
+  }
+
+  addButton(title, value) {
+    // Keeping this to prevent breaking change
+    if (!title)
+      throw new Error(&#x27;Button title cannot be empty&#x27;);
+
+    if (!value)
+      throw new Error(&#x27;Button value is required&#x27;);
+
+    if (isUrl(value)) {
+      return this.addButtonByType(title, value, &#x27;web_url&#x27;);
+    } else {
+      return this.addButtonByType(title, value, &#x27;postback&#x27;);
+    }
+  }
+
+  addCallButton(title, phoneNumber) {
+    if (!/^\+[0-9]{4,20}$/.test(phoneNumber))
+      throw new Error(&#x27;Call button value needs to be a valid phone number in following format: +1234567...&#x27;);
+
+    return this.addButtonByType(title, phoneNumber, &#x27;phone_number&#x27;);
+  }
+
+  addShareButton(shareContent) {
+    return this.addButtonByType(&#x27;Share&#x27;, null, &#x27;element_share&#x27;, {
+      shareContent: shareContent || null
+    });
+  }
+
+  addBuyButton(title, value, paymentSummary) {
+    if (!value)
+      throw new Error(&#x27;Button value is required&#x27;);
+
+    if (typeof paymentSummary !== &#x27;object&#x27;)
+      throw new Error(&#x27;Payment summary is required for buy button&#x27;);
+
+    return this.addButtonByType(title, value, &#x27;payment&#x27;, {
+      paymentSummary: paymentSummary
+    });
+  }
+
+  addLoginButton(url) {
+    if (!isUrl(url))
+      throw new Error(&#x27;Valid URL is required for Login button&#x27;);
+
+    return this.addButtonByType(&#x27;Login&#x27;, url, &#x27;account_link&#x27;);
+  }
+
+  addLogoutButton() {
+    return this.addButtonByType(&#x27;Logout&#x27;, null, &#x27;account_unlink&#x27;);
+  }
+
+  get() {
+    if (this.template.attachment.payload.buttons.length === 0)
+      throw new Error(&#x27;Add at least one button first!&#x27;);
+
+    return this.template;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  });
+});
+  });
+
+  describe(&#x27;Button template&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  let button = new formatFbMessage.<span class="apidocCodeKeywordSpan">Button</span>(&#x27;Test&#x27;);
+
+  expect(typeof formatFbMessage.Button).toBe(&#x27;function&#x27;);
+  expect(button instanceof formatFbMessage.Button).toBeTruthy();
+});
+
+it(&#x27;should throw an error if button text is not provided&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatFbMessage.Button()).toThrowError(&#x27;Button template text cannot be empty&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.ChatAction" id="apidoc.element.claudia-bot-builder.fbTemplate.ChatAction">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>ChatAction
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class ChatAction {
+  constructor(action) {
+    const AVAILABLE_TYPES = [&#x27;typing_on&#x27;, &#x27;typing_off&#x27;, &#x27;mark_seen&#x27;];
+
+    if (AVAILABLE_TYPES.indexOf(action) &#x3c; 0)
+      throw new Error(&#x27;Valid action is required for Facebook ChatAction template. Available actions are: typing_on, typing_off and
+ mark_seen.&#x27;);
+
+    this.template = {
+      sender_action: action
+    };
+  }
+
+  get() {
+    return this.template;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+      }
+    });
+  });
+});
+describe(&#x27;ChatAction&#x27;, () =&#x3e; {
+  it(&#x27;should send a chat action if it is correct&#x27;, () =&#x3e; {
+    expect(new formatFbMessage.<span class="apidocCodeKeywordSpan">ChatAction</span>(&#x27;typing_on&#x27;).get()).toEqual({
+      sender_action: &#x27;typing_on&#x27;
+    });
+    expect(new formatFbMessage.ChatAction(&#x27;typing_off&#x27;).get()).toEqual({
+      sender_action: &#x27;typing_off&#x27;
+    });
+    expect(new formatFbMessage.ChatAction(&#x27;mark_seen&#x27;).get()).toEqual({
+      sender_action: &#x27;mark_seen&#x27;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.File" id="apidoc.element.claudia-bot-builder.fbTemplate.File">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>File
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class File extends FacebookTemplate {
+  constructor(url) {
+    super();
+
+    if (!url || !isUrl(url))
+      throw new Error(&#x27;File attachment template requires a valid URL as a first parameter&#x27;);
+
+    this.template = {
+      attachment: {
+        type: &#x27;file&#x27;,
+        payload: {
+          url: url
+        }
+      }
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    claudiaPause: 500
+  });
+});
+  });
+
+  describe(&#x27;File&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">File</span>(&#x27;https://some.file.com/address.md&#x27;);
+  expect(typeof formatMessage.File).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.File).toBeTruthy();
+});
+
+it(&#x27;should throw an error if file url is not available&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.File()).toThrowError(&#x27;Document needs to be an URL for the Telegram File method&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.Generic" id="apidoc.element.claudia-bot-builder.fbTemplate.Generic">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Generic
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Generic extends FacebookTemplate {
+  constructor() {
+    super();
+
+    this.bubbles = [];
+
+    this.template = {
+      attachment: {
+        type: &#x27;template&#x27;,
+        payload: {
+          template_type: &#x27;generic&#x27;,
+          elements: []
+        }
+      }
+    };
+  }
+
+  useSquareImages() {
+    this.template.attachment.payload.image_aspect_ratio = &#x27;square&#x27;;
+
+    return this;
+  }
+
+  getLastBubble() {
+    if (!this.bubbles || !this.bubbles.length)
+      throw new Error(&#x27;Add at least one bubble first!&#x27;);
+
+    return this.bubbles[this.bubbles.length - 1];
+  }
+
+  addBubble(title, subtitle) {
+    if (this.bubbles.length === 10)
+      throw new Error(&#x27;10 bubbles are maximum for Generic template&#x27;);
+
+    if (!title)
+      throw new Error(&#x27;Bubble title cannot be empty&#x27;);
+
+    if (title.length &#x3e; 80)
+      throw new Error(&#x27;Bubble title cannot be longer than 80 characters&#x27;);
+
+    if (subtitle &#x26;&#x26; subtitle.length &#x3e; 80)
+      throw new Error(&#x27;Bubble subtitle cannot be longer than 80 characters&#x27;);
+
+    let bubble = {
+      title: title
+    };
+
+    if (subtitle)
+      bubble[&#x27;subtitle&#x27;] = subtitle;
+
+    this.bubbles.push(bubble);
+
+    return this;
+  }
+
+  addUrl(url) {
+    if (!url)
+      throw new Error(&#x27;URL is required for addUrl method&#x27;);
+
+    if (!isUrl(url))
+      throw new Error(&#x27;URL needs to be valid for addUrl method&#x27;);
+
+    this.getLastBubble()[&#x27;item_url&#x27;] = url;
+
+    return this;
+  }
+
+  addImage(url) {
+    if (!url)
+      throw new Error(&#x27;Image URL is required for addImage method&#x27;);
+
+    if (!isUrl(url))
+      throw new Error(&#x27;Image URL needs to be valid for addImage method&#x27;);
+
+    this.getLastBubble()[&#x27;image_url&#x27;] = url;
+
+    return this;
+  }
+
+  addButtonByType(title, value, type, options) {
+    if (!title)
+      throw new Error(&#x27;Button title cannot be empty&#x27;);
+
+    const bubble = this.getLastBubble();
+
+    bubble.buttons = bubble.buttons || [];
+
+    if (bubble.buttons.length === 3)
+      throw new Error(&#x27;3 buttons are already added and that\&#x27;s the maximum&#x27;);
+
+    if (!title)
+      throw new Error(&#x27;Button title cannot be empty&#x27;);
+
+    const button = {
+      title: title,
+      type: type || &#x27;postback&#x27;
+    };
+
+    if (type === &#x27;web_url&#x27;) {
+      button.url = value;
+    } else if (type === &#x27;account_link&#x27;) {
+      delete button.title;
+      button.url = value;
+    } else if (type === &#x27;phone_number&#x27;) {
+      button.payload = value;
+    } else if (type === &#x27;payment&#x27;) {
+      button.payload = value;
+      button.payment_summary = options.paymentSummary;
+    } else if (type === &#x27;element_share&#x27; || type === &#x27;account_unlink&#x27;) {
+      delete button.title;
+      if (type === &#x27;element_share&#x27; &#x26;&#x26; options &#x26;&#x26; typeof options.shareContent)
+        button.share_contents = options.shareContent;
+    } else {
+      button.type = &#x27;postback&#x27;;
+      button.payload = value;
+    }
+
+    bubble.buttons.push(button);
+
+    return this;
+  }
+
+  addButton(title, value) {
+    // Keeping this to prevent breaking change
+    if (!title)
+      throw new Error(&#x27;Button title cannot be empty&#x27;);
+
+    if (!value)
+      throw new Error(&#x27;Button value is required&#x27;);
+
+    if (isUrl(value)) {
+      return this.addButtonByType(title, value, &#x27;web_url&#x27;);
+    } else {
+      return this.addButtonByType(title, value, &#x27;postback&#x27;);
+    }
+  }
+
+  addCallButton(title, phoneNumber) {
+    if (!/^\+[0-9]{4,20}$/.test(phoneNumber))
+      throw new Error(&#x27;Call button value needs to be a valid phone number in following format: +1234567...&#x27;);
+
+    return this.addButtonByType(title, phoneNumber, &#x27;phone_number&#x27;);
+  }
+
+  addShareButton(shareContent) {
+    return this.addButtonByType(&#x27;Share&#x27;, null, &#x27;element_share&#x27;, {
+      shareContent: shareContent || null
+    });
+  }
+
+  addBuyButton(title, value, paymentSummary) {
+    if (!value)
+      throw new Error(&#x27;Button value is required&#x27;);
+
+    if (typeof paymentSummary !== &#x27;object&#x27;)
+      throw new Error(&#x27;Payment summary is required for buy button&#x27;);
+
+    return this.addButtonByType(title, value, &#x27;payment&#x27;, {
+      paymentSummary: paymentSummary
+    });
+  }
+
+  addLoginButton(url) {
+    if (!isUrl(url))
+      throw new Error(&#x27;Valid URL is required for Lo ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+  });
+
+  describe(&#x27;Generic template&#x27;, () =&#x3e; {
+let generic;
+
+beforeEach(() =&#x3e; {
+  generic = new formatFbMessage.<span class="apidocCodeKeywordSpan">Generic</span>();
+});
+
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  expect(typeof formatFbMessage.Generic).toBe(&#x27;function&#x27;);
+  expect(generic instanceof formatFbMessage.Generic).toBeTruthy();
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.Image" id="apidoc.element.claudia-bot-builder.fbTemplate.Image">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Image
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Image extends FacebookTemplate {
+  constructor(url) {
+    super();
+
+    if (!url || !isUrl(url))
+      throw new Error(&#x27;Image template requires a valid URL as a first parameter&#x27;);
+
+    this.template = {
+      attachment: {
+        type: &#x27;image&#x27;,
+        payload: {
+          url: url
+        }
+      }
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  expect(receipt).toEqual(fbExample);
+});
+
+  });
+
+  describe(&#x27;Image attachment&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  let image = new formatFbMessage.<span class="apidocCodeKeywordSpan">Image</span>(&#x27;http://google.com&#x27;);
+
+  expect(typeof formatFbMessage.Image).toBe(&#x27;function&#x27;);
+  expect(image instanceof formatFbMessage.Image).toBeTruthy();
+});
+
+it(&#x27;should throw an error if you add an image without the url&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatFbMessage.Image()).toThrowError(&#x27;Image template requires a valid URL as a first parameter&#x27
+;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.List" id="apidoc.element.claudia-bot-builder.fbTemplate.List">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>List
+        <span class="apidocSignatureSpan">(topElementStyle)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class List extends FacebookTemplate {
+  constructor(topElementStyle) {
+    super();
+
+    this.bubbles = [];
+
+    this.template = {
+      attachment: {
+        type: &#x27;template&#x27;,
+        payload: {
+          template_type: &#x27;list&#x27;,
+          top_element_style: topElementStyle ? topElementStyle : &#x27;large&#x27;,
+          elements: [],
+          buttons: []
+        }
+      }
+    };
+  }
+
+  getFirstBubble() {
+    if (!this.bubbles || !this.bubbles.length)
+      throw new Error(&#x27;Add at least one bubble first!&#x27;);
+
+    return this.bubbles[0];
+  }
+
+  getLastBubble() {
+    if (!this.bubbles || !this.bubbles.length)
+      throw new Error(&#x27;Add at least one bubble first!&#x27;);
+
+    return this.bubbles[this.bubbles.length - 1];
+  }
+
+  addBubble(title, subtitle) {
+    if (this.bubbles.length === 4)
+      throw new Error(&#x27;4 bubbles are maximum for List template&#x27;);
+
+    if (!title)
+      throw new Error(&#x27;Bubble title cannot be empty&#x27;);
+
+    if (title.length &#x3e; 80)
+      throw new Error(&#x27;Bubble title cannot be longer than 80 characters&#x27;);
+
+    if (subtitle &#x26;&#x26; subtitle.length &#x3e; 80)
+      throw new Error(&#x27;Bubble subtitle cannot be longer than 80 characters&#x27;);
+
+    let bubble = {
+      title: title
+    };
+
+    if (subtitle)
+      bubble[&#x27;subtitle&#x27;] = subtitle;
+
+    this.bubbles.push(bubble);
+
+    return this;
+  }
+
+  addImage(url) {
+    if (!url)
+      throw new Error(&#x27;Image URL is required for addImage method&#x27;);
+
+    if (!isUrl(url))
+      throw new Error(&#x27;Image URL needs to be valid for addImage method&#x27;);
+
+    this.getLastBubble()[&#x27;image_url&#x27;] = url;
+
+    return this;
+  }
+
+  addDefaultAction(url) {
+    const bubble = this.getLastBubble();
+
+    if (bubble.default_action)
+      throw new Error(&#x27;Bubble already has default action&#x27;);
+
+    if (!url)
+      throw new Error(&#x27;Bubble default action URL is required&#x27;);
+
+    if (!isUrl(url))
+      throw new Error(&#x27;Bubble default action URL must be valid URL&#x27;);
+
+    bubble.default_action = {
+      type: &#x27;web_url&#x27;,
+      url: url
+    };
+
+    return this;
+  }
+
+  addButton(title, value, type) {
+    const bubble = this.getLastBubble();
+
+    bubble.buttons = bubble.buttons || [];
+
+    if (bubble.buttons.length === 1)
+      throw new Error(&#x27;One button is already added and that\&#x27;s the maximum&#x27;);
+
+    if (!title)
+      throw new Error(&#x27;Button title cannot be empty&#x27;);
+
+    if (!value)
+      throw new Error(&#x27;Button value is required&#x27;);
+
+    const button = {
+      title: title
+    };
+
+    if (isUrl(value)) {
+      button.type = &#x27;web_url&#x27;;
+      button.url = value;
+    } else {
+      button.type = &#x27;postback&#x27;;
+      button.payload = value;
+    }
+
+    if (type) {
+      button.type = type;
+    }
+
+    bubble.buttons.push(button);
+
+    return this;
+  }
+
+  addShareButton() {
+    const bubble = this.getLastBubble();
+
+    bubble.buttons = bubble.buttons || [];
+
+    if (bubble.buttons.length === 1)
+      throw new Error(&#x27;One button is already added and that\&#x27;s the maximum&#x27;);
+    const button = {
+      type: &#x27;element_share&#x27;
+    };
+
+    bubble.buttons.push(button);
+
+    return this;
+  }
+
+  addListButton(title, value, type) {
+    if (this.template.attachment.payload.buttons.length === 1)
+      throw new Error(&#x27;One List button is already added and that\&#x27;s the maximum&#x27;);
+
+    if (!title)
+      throw new Error(&#x27;List button title cannot be empty&#x27;);
+
+    if (!value)
+      throw new Error(&#x27;List button value is required&#x27;);
+
+    const button = {
+      title: title
+    };
+
+    if (isUrl(value)) {
+      button.type = &#x27;web_url&#x27;;
+      button.url = value;
+    } else {
+      button.type = &#x27;postback&#x27;;
+      button.payload = value;
+    }
+
+    if (type) {
+      button.type = type;
+    }
+
+    this.template.attachment.payload.buttons.push(button);
+
+    return this;
+  }
+
+  get() {
+    if (!this.bubbles || !this.bubbles.length || this.bubbles.length &#x3c; 2)
+      throw new Error(&#x27;2 bubbles are minimum for List template!&#x27;);
+
+    if (this.template.attachment.payload.top_element_style === &#x27;large&#x27; &#x26;&#x26; !this.getFirstBubble()[&#x27;image_url&#x27;])
+      throw new Error(&#x27;You need to add image to the first bubble because you use `large` top element style&#x27;);
+
+    this.template.att ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+  });
+
+  describe(&#x27;List template&#x27;, () =&#x3e; {
+let list;
+
+beforeEach(() =&#x3e; {
+  list = new formatFbMessage.<span class="apidocCodeKeywordSpan">List</span>();
+});
+
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  expect(typeof formatFbMessage.List).toBe(&#x27;function&#x27;);
+  expect(list instanceof formatFbMessage.List).toBeTruthy();
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.Pause" id="apidoc.element.claudia-bot-builder.fbTemplate.Pause">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Pause
+        <span class="apidocSignatureSpan">(milliseconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Pause {
+  constructor(milliseconds) {
+    this.template = {
+      claudiaPause: milliseconds || 500
+    };
+  }
+
+  get() {
+    return this.template;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+it(&#x27;should throw an error if chat action is not valid&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatFbMessage.ChatAction(&#x27;invalid_chat_action&#x27;).get()).toThrowError(&#x27;Valid action is required
+ for Facebook ChatAction template. Available actions are: typing_on, typing_off and mark_seen.&#x27;);
+});
+  });
+  describe(&#x27;Pause&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatFbMessage.<span class="apidocCodeKeywordSpan">Pause</span>(200);
+  expect(typeof formatFbMessage.Pause).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatFbMessage.Pause).toBeTruthy();
+});
+
+it(&#x27;should generate an object with a defined value&#x27;, () =&#x3e; {
+  const message = new formatFbMessage.Pause(1000).get();
+  expect(message).toEqual({
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.Receipt" id="apidoc.element.claudia-bot-builder.fbTemplate.Receipt">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Receipt
+        <span class="apidocSignatureSpan">(name, orderNumber, currency, paymentMethod)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Receipt extends FacebookTemplate {
+  constructor(name, orderNumber, currency, paymentMethod) {
+    super();
+
+    if (!name)
+      throw new Error(&#x27;Recipient\&#x27;s name cannot be empty&#x27;);
+
+    if (!orderNumber)
+      throw new Error(&#x27;Order number cannot be empty&#x27;);
+
+    if (!currency)
+      throw new Error(&#x27;Currency cannot be empty&#x27;);
+
+    if (!paymentMethod)
+      throw new Error(&#x27;Payment method cannot be empty&#x27;);
+
+    this.template = {
+      attachment: {
+        type: &#x27;template&#x27;,
+        payload: {
+          template_type: &#x27;receipt&#x27;,
+          recipient_name: name,
+          order_number: orderNumber,
+          currency: currency,
+          payment_method: paymentMethod,
+          elements: [],
+          summary: {}
+        }
+      }
+    };
+  }
+
+  addTimestamp(timestamp) {
+    if (!timestamp)
+      throw new Error(&#x27;Timestamp is required for addTimestamp method&#x27;);
+
+    if (!(timestamp instanceof Date))
+      throw new Error(&#x27;Timestamp needs to be a valid Date object&#x27;);
+
+    this.template.attachment.payload.timestamp = timestamp.getTime();
+
+    return this;
+  }
+
+  addOrderUrl(url) {
+    if (!url)
+      throw new Error(&#x27;Url is required for addOrderUrl method&#x27;);
+
+    if (!isUrl(url))
+      throw new Error(&#x27;Url needs to be valid for addOrderUrl method&#x27;);
+
+    this.template.attachment.payload.order_url = url;
+
+    return this;
+  }
+
+  getLastItem() {
+    if (!this.template.attachment.payload.elements || !this.template.attachment.payload.elements.length)
+      throw new Error(&#x27;Add at least one order item first!&#x27;);
+
+    return this.template.attachment.payload.elements[this.template.attachment.payload.elements.length - 1];
+  }
+
+  addItem(title) {
+    if (!title)
+      throw new Error(&#x27;Item title is required&#x27;);
+
+    this.template.attachment.payload.elements.push({
+      title: title
+    });
+
+    return this;
+  }
+
+  addSubtitle(subtitle) {
+    if (!subtitle)
+      throw new Error(&#x27;Subtitle is required for addSubtitle method&#x27;);
+
+    let item = this.getLastItem();
+
+    item.subtitle = subtitle;
+
+    return this;
+  }
+
+  addQuantity(quantity) {
+    if (!quantity)
+      throw new Error(&#x27;Quantity is required for addQuantity method&#x27;);
+
+    if (!isNumber(quantity))
+      throw new Error(&#x27;Quantity needs to be a number&#x27;);
+
+    let item = this.getLastItem();
+
+    item.quantity = quantity;
+
+    return this;
+  }
+
+  addPrice(price) {
+    if (!price)
+      throw new Error(&#x27;Price is required for addPrice method&#x27;);
+
+    if (!isNumber(price))
+      throw new Error(&#x27;Price needs to be a number&#x27;);
+
+    let item = this.getLastItem();
+
+    item.price = price;
+
+    return this;
+  }
+
+  addCurrency(currency) {
+    if (!currency)
+      throw new Error(&#x27;Currency is required for addCurrency method&#x27;);
+
+    let item = this.getLastItem();
+
+    item.currency = currency;
+
+    return this;
+  }
+
+  addImage(image) {
+    if (!image)
+      throw new Error(&#x27;Absolute url is required for addImage method&#x27;);
+
+    if (!isUrl(image))
+      throw new Error(&#x27;Valid absolute url is required for addImage method&#x27;);
+
+    let item = this.getLastItem();
+
+    item.image_url = image;
+
+    return this;
+  }
+
+  addShippingAddress(street1, street2, city, zip, state, country) {
+    if (!street1)
+      throw new Error(&#x27;Street is required for addShippingAddress&#x27;);
+
+    if (!city)
+      throw new Error(&#x27;City is required for addShippingAddress method&#x27;);
+
+    if (!zip)
+      throw new Error(&#x27;Zip code is required for addShippingAddress method&#x27;);
+
+    if (!state)
+      throw new Error(&#x27;State is required for addShippingAddress method&#x27;);
+
+    if (!country)
+      throw new Error(&#x27;Country is required for addShippingAddress method&#x27;);
+
+    this.template.attachment.payload.address = {
+      street_1: street1,
+      street_2: street2 || &#x27;&#x27;,
+      city: city,
+      postal_code: zip,
+      state: state,
+      country: country
+    };
+
+    return this;
+  }
+
+  addAdjustment(name, amount) {
+    if (!amount || !isNumber(amount))
+      throw new Error(&#x27;Adjustment amount must be a number&#x27;);
+
+    let adjustment = {};
+
+    if (name)
+      adjustment.name = name;
+
+    if (amount)
+      adjustment.amount = amount; ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+      ]
+    }
+  }
+};
+
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  let receipt = new formatFbMessage.<span class="apidocCodeKeywordSpan">Receipt</span>(&#x27;John Doe&#x27;, &#x27;O123&#x27;, &#
+x27;$&#x27;, &#x27;Paypal&#x27;);
+
+  expect(typeof formatFbMessage.Receipt).toBe(&#x27;function&#x27;);
+  expect(receipt instanceof formatFbMessage.Receipt).toBeTruthy();
+});
+
+it(&#x27;should throw an error if recipient\&#x27;s name is not defined&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatFbMessage.Receipt()).toThrowError(&#x27;Recipient\&#x27;s name cannot be empty&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.Text" id="apidoc.element.claudia-bot-builder.fbTemplate.Text">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Text
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Text extends FacebookTemplate {
+  constructor(text) {
+    super();
+
+    if (!text)
+      throw new Error(&#x27;Text is required for text template&#x27;);
+
+    this.template = {
+      text: text
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+describe(&#x27;Facebook format message&#x27;, () =&#x3e; {
+  it(&#x27;should export an object&#x27;, () =&#x3e; {
+expect(typeof formatFbMessage).toBe(&#x27;object&#x27;);
+  });
+
+  describe(&#x27;Text&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatFbMessage.<span class="apidocCodeKeywordSpan">Text</span>(&#x27;text&#x27;);
+  expect(typeof formatFbMessage.Text).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatFbMessage.Text).toBeTruthy();
+});
+
+it(&#x27;should throw an error if text is not provided&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatFbMessage.Text()).toThrowError(&#x27;Text is required for text template&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.Video" id="apidoc.element.claudia-bot-builder.fbTemplate.Video">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>Video
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Video extends FacebookTemplate {
+  constructor(url) {
+    super();
+
+    if (!url || !isUrl(url))
+      throw new Error(&#x27;Video template requires a valid URL as a first parameter&#x27;);
+
+    this.template = {
+      attachment: {
+        type: &#x27;video&#x27;,
+        payload: {
+          url: url
+        }
+      }
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    text: &#x27;Claudia.js photo text&#x27;
+  });
+});
+  });
+
+  describe(&#x27;Video&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Video</span>(&#x27;https://vimeo.com/170647056&#x27;, 25600
+, 156);
+  expect(typeof formatMessage.Video).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Video).toBeTruthy();
+});
+
+it(&#x27;should throw an error if video url is not available&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.Video()).toThrowError(&#x27;Media needs to be an URL for Viber Video method&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.attachment" id="apidoc.element.claudia-bot-builder.fbTemplate.attachment">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>attachment
+        <span class="apidocSignatureSpan">(url, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class attachment extends Attachment {
+  constructor(url, type) {
+    super(url, type);
+    console.log(&#x27;Deprecation notice: please use .Attachment instead of .attachment method, lower case method names will be removed
+ in next major version of Claudia bot builder&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.audio" id="apidoc.element.claudia-bot-builder.fbTemplate.audio">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>audio
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class audio extends Audio {
+  constructor(url) {
+    super(url);
+    console.log(&#x27;Deprecation notice: please use .Audio instead of .audio method, lower case method names will be removed in next
+ major version of Claudia bot builder&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.button" id="apidoc.element.claudia-bot-builder.fbTemplate.button">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>button
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class button extends Button {
+  constructor(text) {
+    super(text);
+    console.log(&#x27;Deprecation notice: please use .Button instead of .button method, lower case method names will be removed in next
+ major version of Claudia bot builder&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.file" id="apidoc.element.claudia-bot-builder.fbTemplate.file">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>file
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class file extends File {
+  constructor(url) {
+    super(url);
+    console.log(&#x27;Deprecation notice: please use .File instead of .file method, lower case method names will be removed in next major
+ version of Claudia bot builder&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.generic" id="apidoc.element.claudia-bot-builder.fbTemplate.generic">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>generic
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class generic extends Generic {
+  constructor() {
+    super();
+    console.log(&#x27;Deprecation notice: please use .Generic instead of .generic method, lower case method names will be removed in
+next major version of Claudia bot builder&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.image" id="apidoc.element.claudia-bot-builder.fbTemplate.image">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>image
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class image extends Image {
+  constructor(url) {
+    super(url);
+    console.log(&#x27;Deprecation notice: please use .Image instead of .image method, lower case method names will be removed in next
+ major version of Claudia bot builder&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.receipt" id="apidoc.element.claudia-bot-builder.fbTemplate.receipt">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>receipt
+        <span class="apidocSignatureSpan">(name, orderNumber, currency, paymentMethod)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class receipt extends Receipt {
+  constructor(name, orderNumber, currency, paymentMethod) {
+    super(name, orderNumber, currency, paymentMethod);
+    console.log(&#x27;Deprecation notice: please use .Receipt instead of .receipt method, lower case method names will be removed in
+next major version of Claudia bot builder&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.text" id="apidoc.element.claudia-bot-builder.fbTemplate.text">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>text
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class text extends Text {
+  constructor(text) {
+    super(text);
+    console.log(&#x27;Deprecation notice: please use .Text instead of .text method, lower case method names will be removed in next major
+ version of Claudia bot builder&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.fbTemplate.video" id="apidoc.element.claudia-bot-builder.fbTemplate.video">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.fbTemplate.</span>video
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class video extends Video {
+  constructor(url) {
+    super(url);
+    console.log(&#x27;Deprecation notice: please use .Video instead of .video method, lower case method names will be removed in next
+ major version of Claudia bot builder&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.claudia-bot-builder.skypeTemplate" id="apidoc.module.claudia-bot-builder.skypeTemplate">module claudia-bot-builder.skypeTemplate</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.skypeTemplate.Carousel" id="apidoc.element.claudia-bot-builder.skypeTemplate.Carousel">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.skypeTemplate.</span>Carousel
+        <span class="apidocSignatureSpan">(summary, text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Carousel extends SkypeMessage {
+  constructor(summary, text) {
+    super();
+
+    this.template = {
+      type: &#x27;message/card.carousel&#x27;,
+      attachmentLayout: &#x27;carousel&#x27;,
+      summary: summary || &#x27;&#x27;,
+      text: text || &#x27;&#x27;,
+      attachments: []
+    };
+
+    return this;
+  }
+
+  getCurrentAttachment() {
+    let current = this.template.attachments.length - 1;
+
+    if (current &#x3c; 0) {
+      throw new Error(&#x27;You need to add attachment to Carousel&#x27;);
+    }
+
+    return current;
+  }
+
+  addHero(images) {
+    if(images &#x26;&#x26; !Array.isArray(images)) {
+      throw new Error(&#x27;Images should be sent as array for the Skype Hero template&#x27;);
+    }
+
+    this.template.attachments.push({
+      contentType: &#x27;application/vnd.microsoft.card.hero&#x27;,
+      content: {
+        title: &#x27;&#x27;,
+        subtitle: &#x27;&#x27;,
+        text: &#x27;&#x27;,
+        images: images ? images.map(image =&#x3e; ({url: image, alt: &#x27;&#x27;})) : [],
+        buttons: []
+      }
+    });
+
+    return this;
+  }
+
+  addThumbnail(images) {
+    if(images &#x26;&#x26; !Array.isArray(images)) {
+      throw new Error(&#x27;Images should be sent as array for the Skype Thumbnail template&#x27;);
+    }
+
+    this.template.attachments.push({
+      contentType: &#x27;application/vnd.microsoft.card.thumbnail&#x27;,
+      content: {
+        title: &#x27;&#x27;,
+        subtitle: &#x27;&#x27;,
+        text: &#x27;&#x27;,
+        images: images ? images.map(image =&#x3e; ({url: image, alt: &#x27;&#x27;})) : [],
+        buttons: []
+      }
+    });
+
+    return this;
+  }
+
+  addReceipt(total, tax, vat) {
+    this.template.attachments.push({
+      contentType: &#x27;application/vnd.microsoft.card.receipt&#x27;,
+      content: {
+        title: &#x27;&#x27;,
+        subtitle: &#x27;&#x27;,
+        text: &#x27;&#x27;,
+        total: total || &#x27;&#x27;,
+        tax: tax || &#x27;&#x27;,
+        vat: vat || &#x27;&#x27;,
+        items: [],
+        facts: [],
+        buttons: []
+      }
+    });
+
+    return this;
+  }
+
+  addFact(key, value) {
+    let currentAttachment = this.getCurrentAttachment();
+
+    this.template.attachments[currentAttachment].content.facts.push({
+      key: key || &#x27;&#x27;,
+      value: value || &#x27;&#x27;
+    });
+
+    return this;
+  }
+
+  addItem(title, subtitle, text, price, quantity, image) {
+    let currentAttachment = this.getCurrentAttachment();
+
+    this.template.attachments[currentAttachment].content.items.push({
+      title: title || &#x27;&#x27;,
+      subtitle: subtitle || &#x27;&#x27;,
+      text: text || &#x27;&#x27;,
+      price: price || &#x27;&#x27;,
+      quantity: quantity || &#x27;&#x27;,
+      image: {
+        url: image || &#x27;&#x27;
+      }
+    });
+
+    return this;
+  }
+
+  addTitle(title) {
+    let currentAttachment = this.getCurrentAttachment();
+
+    if (!title || typeof title !== &#x27;string&#x27;)
+      throw new Error(&#x27;Title needs to be a string for Skype addTitle method&#x27;);
+
+    this.template.attachments[currentAttachment].content.title = title;
+
+    return this;
+  }
+
+  addSubtitle(subtitle) {
+    let currentAttachment = this.getCurrentAttachment();
+
+    if (!subtitle || typeof subtitle !== &#x27;string&#x27;)
+      throw new Error(&#x27;Subtitle needs to be a string for Skype addSubtitle method&#x27;);
+
+    this.template.attachments[currentAttachment].content.subtitle = subtitle;
+
+    return this;
+  }
+
+  addText(text) {
+    let currentAttachment = this.getCurrentAttachment();
+
+    if (!text || typeof text !== &#x27;string&#x27;)
+      throw new Error(&#x27;Text needs to be a string for Skype addText method&#x27;);
+
+    this.template.attachments[currentAttachment].content.text = text;
+
+    return this;
+  }
+
+  addButton(title, value, type) {
+    let currentAttachment = this.getCurrentAttachment();
+
+    if (!title || typeof title !== &#x27;string&#x27;)
+      throw new Error(&#x27;Title needs to be a string for Skype addButton method&#x27;);
+
+    if (!value || typeof value !== &#x27;string&#x27;)
+      throw new Error(&#x27;Value needs to be a string for Skype addButton method&#x27;);
+
+    if (!type || typeof type !== &#x27;string&#x27;)
+      throw new Error(&#x27;Type needs to be a string for Skype addButton method&#x27;);
+
+    let validTypes = [&#x27;openUrl&#x27;, &#x27;imBack&#x27;, &#x27;postBack&#x27;, &#x27;playAudio&#x27;, &#x27;playVideo&#x27;, &#x27;showImage&#x27;, &#x27;downloadFile&#x27;, &#x27;signin&#x27;];
+    if (validTypes.indexOf(type) == -1)
+      throw new Error(&#x27;Type needs to be a valid type string for Skype addButton method&#x27;);
+
+    this.template.attachmen ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.Photo(&#x27;foo&#x27;);
+  expect(typeof formatMessage.Photo).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Photo).toBeTruthy();
+});
+
+it(&#x27;should generate a valid Carousel template object&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Carousel</span>(&#x27;summary&#x27;, &#x27;text&#x27;).get
+();
+  expect(message).toEqual({
+    type: &#x27;message/card.carousel&#x27;,
+    attachmentLayout: &#x27;carousel&#x27;,
+    summary: &#x27;summary&#x27;,
+    text: &#x27;text&#x27;,
+    attachments: []
+  });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.skypeTemplate.Photo" id="apidoc.element.claudia-bot-builder.skypeTemplate.Photo">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.skypeTemplate.</span>Photo
+        <span class="apidocSignatureSpan">(base64Photo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Photo extends SkypeMessage {
+  constructor(base64Photo) {
+    super();
+    if (!base64Photo || typeof base64Photo !== &#x27;string&#x27;)
+      throw new Error(&#x27;Photo is required for the Skype Photo template&#x27;);
+
+    this.template = {
+      type: &#x27;message/image&#x27;,
+      attachments: [{
+        contentUrl: base64Photo
+      }]
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+describe(&#x27;Skype format message&#x27;, () =&#x3e; {
+  it(&#x27;should export an object&#x27;, () =&#x3e; {
+expect(typeof formatMessage).toBe(&#x27;object&#x27;);
+  });
+
+  describe(&#x27;Photo&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Photo</span>(&#x27;foo&#x27;);
+  expect(typeof formatMessage.Photo).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Photo).toBeTruthy();
+});
+
+it(&#x27;should throw an error if photo url is not provided&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.Photo()).toThrowError(&#x27;Photo is required for the Skype Photo template&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.skypeTemplate.Typing" id="apidoc.element.claudia-bot-builder.skypeTemplate.Typing">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.skypeTemplate.</span>Typing
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Typing extends SkypeMessage {
+  constructor() {
+    super();
+    this.template = {
+      type: &#x27;typing&#x27;
+    };
+
+    return this.template;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      expect(() =&#x3e; new formatMessage.Carousel(&#x27;summary&#x27;, &#x27;text&#x27;)
+        .addHero()
+        .addText()
+        .get()).toThrowError(&#x27;Text needs to be a string for Skype addText method&#x27;);
+    });
+
+    it(&#x27;should generate a valid Typing template object&#x27;, () =&#x3e; {
+      const message = new formatMessage.<span class="apidocCodeKeywordSpan">Typing</span>();
+      expect(message).toEqual({
+        type: &#x27;typing&#x27;
+      });
+    });
+  });
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.claudia-bot-builder.telegramTemplate" id="apidoc.module.claudia-bot-builder.telegramTemplate">module claudia-bot-builder.telegramTemplate</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.telegramTemplate.Audio" id="apidoc.element.claudia-bot-builder.telegramTemplate.Audio">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Audio
+        <span class="apidocSignatureSpan">(audio, caption, duration)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Audio extends TelegramMessage {
+  constructor(audio, caption, duration) {
+    super();
+    if (!audio || typeof audio !== &#x27;string&#x27;)
+      throw new Error(&#x27;Audio needs to be an ID or URL for Telegram Audio method&#x27;);
+
+    this.template = {
+      audio: audio
+    };
+
+    if (caption &#x26;&#x26; typeof caption === &#x27;string&#x27;)
+      this.template.caption = caption;
+
+    if (duration &#x26;&#x26; typeof duration === &#x27;number&#x27;)
+      this.template.duration = duration;
+  }
+
+  addTitle(title) {
+    if (!title || typeof title != &#x27;string&#x27;)
+      throw new Error(&#x27;Title is required for Telegram addTitle method&#x27;);
+
+    this.template.title = title;
+
+    return this;
+  }
+
+  addPerformer(performer) {
+    if (!performer)
+      throw new Error(&#x27;Performer is required for Telegram addPerformer method&#x27;);
+
+    this.template.performer = performer;
+
+    return this;
+  }
+
+  get() {
+    return {
+      method: &#x27;sendAudio&#x27;,
+      body: this.template
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  });
+});
+  });
+
+  describe(&#x27;Audio&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Audio</span>(&#x27;foo&#x27;);
+  expect(typeof formatMessage.Audio).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Audio).toBeTruthy();
+});
+
+it(&#x27;should throw an error if audio url or id is not provided&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.Audio()).toThrowError(&#x27;Audio needs to be an ID or URL for Telegram Audio method&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.telegramTemplate.ChatAction" id="apidoc.element.claudia-bot-builder.telegramTemplate.ChatAction">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>ChatAction
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class ChatAction extends TelegramMessage {
+  constructor(action) {
+    super();
+    const AVAILABLE_TYPES = [&#x27;typing&#x27;, &#x27;upload_photo&#x27;, &#x27;record_video&#x27;, &#x27;upload_video&#x27;, &#x27;record_audio&#x27;, &#x27;upload_audio&#x27;, &#x27;upload_document
+&#x27;, &#x27;find_location&#x27;];
+
+    if (AVAILABLE_TYPES.indexOf(action) &#x3c; 0)
+      throw new Error(&#x27;Valid action is required for Telegram ChatAction template. Check https://core.telegram.org/bots/api#sendchataction
+ for all available actions.&#x27;);
+
+    this.template = {
+      action: action
+    };
+  }
+
+  get() {
+    return {
+      method: &#x27;sendChatAction&#x27;,
+      body: this.template
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+      }
+    });
+  });
+});
+describe(&#x27;ChatAction&#x27;, () =&#x3e; {
+  it(&#x27;should send a chat action if it is correct&#x27;, () =&#x3e; {
+    expect(new formatFbMessage.<span class="apidocCodeKeywordSpan">ChatAction</span>(&#x27;typing_on&#x27;).get()).toEqual({
+      sender_action: &#x27;typing_on&#x27;
+    });
+    expect(new formatFbMessage.ChatAction(&#x27;typing_off&#x27;).get()).toEqual({
+      sender_action: &#x27;typing_off&#x27;
+    });
+    expect(new formatFbMessage.ChatAction(&#x27;mark_seen&#x27;).get()).toEqual({
+      sender_action: &#x27;mark_seen&#x27;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.telegramTemplate.Contact" id="apidoc.element.claudia-bot-builder.telegramTemplate.Contact">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Contact
+        <span class="apidocSignatureSpan">(phone, firstName, lastName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Contact extends TelegramMessage {
+  constructor(phone, firstName, lastName) {
+    super();
+    if (!phone || typeof phone !== &#x27;string&#x27;)
+      throw new Error(&#x27;Phone number needs to be a string for Telegram Contact method&#x27;);
+
+    if (!firstName || typeof firstName !== &#x27;string&#x27;)
+      throw new Error(&#x27;First name needs to be a string for Telegram Contact method&#x27;);
+
+    this.template = {
+      phone_number: phone,
+      first_name: firstName
+    };
+
+    // lastName is optional
+    if (lastName &#x26;&#x26; typeof lastName === &#x27;string&#x27;)
+      this.template.last_name = lastName;
+  }
+
+  get() {
+    return {
+      method: &#x27;sendContact&#x27;,
+      body: this.template
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  });
+});
+  });
+
+  describe(&#x27;Contact&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Contact</span>(&#x27;123456789&#x27;, &#x27;John&#x27;);
+  expect(typeof formatMessage.Contact).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Contact).toBeTruthy();
+});
+
+it(&#x27;should throw an error if phone number is not available&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.Contact()).toThrowError(&#x27;Phone number needs to be a string for Telegram Contact method
+&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.telegramTemplate.File" id="apidoc.element.claudia-bot-builder.telegramTemplate.File">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>File
+        <span class="apidocSignatureSpan">(document, caption)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class File extends TelegramMessage {
+  constructor(document, caption) {
+    super();
+    if (!document || typeof document !== &#x27;string&#x27;)
+      throw new Error(&#x27;Document needs to be an URL for the Telegram File method&#x27;);
+
+    this.template = {
+      document: document
+    };
+
+    // caption is optional
+    if (caption &#x26;&#x26; typeof caption === &#x27;string&#x27;)
+      this.template.caption = caption;
+  }
+
+  get() {
+    return {
+      method: &#x27;sendDocument&#x27;,
+      body: this.template
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    claudiaPause: 500
+  });
+});
+  });
+
+  describe(&#x27;File&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">File</span>(&#x27;https://some.file.com/address.md&#x27;);
+  expect(typeof formatMessage.File).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.File).toBeTruthy();
+});
+
+it(&#x27;should throw an error if file url is not available&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.File()).toThrowError(&#x27;Document needs to be an URL for the Telegram File method&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.telegramTemplate.Location" id="apidoc.element.claudia-bot-builder.telegramTemplate.Location">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Location
+        <span class="apidocSignatureSpan">(latitude, longitude)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Location extends TelegramMessage {
+  constructor(latitude, longitude) {
+    super();
+    if (!latitude || !longitude || typeof latitude !== &#x27;number&#x27; || typeof longitude !== &#x27;number&#x27;)
+      throw new Error(&#x27;Latitude and longitude are required for Telegram Location template&#x27;);
+
+    this.template = {
+      latitude: latitude,
+      longitude: longitude
+    };
+  }
+
+  get() {
+    return {
+      method: &#x27;sendLocation&#x27;,
+      body: this.template
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  });
+});
+  });
+
+  describe(&#x27;Location&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Location</span>(20, 44);
+  expect(typeof formatMessage.Location).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Location).toBeTruthy();
+});
+
+it(&#x27;should throw an error if latitude and longitude are not valid&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.Location()).toThrowError(&#x27;Latitude and longitude are required for Telegram Location template
+&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.telegramTemplate.Pause" id="apidoc.element.claudia-bot-builder.telegramTemplate.Pause">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Pause
+        <span class="apidocSignatureSpan">(miliseconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Pause {
+  constructor(miliseconds) {
+    this.template = {
+      claudiaPause: miliseconds || 500
+    };
+  }
+
+  get() {
+    return this.template;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+it(&#x27;should throw an error if chat action is not valid&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatFbMessage.ChatAction(&#x27;invalid_chat_action&#x27;).get()).toThrowError(&#x27;Valid action is required
+ for Facebook ChatAction template. Available actions are: typing_on, typing_off and mark_seen.&#x27;);
+});
+  });
+  describe(&#x27;Pause&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatFbMessage.<span class="apidocCodeKeywordSpan">Pause</span>(200);
+  expect(typeof formatFbMessage.Pause).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatFbMessage.Pause).toBeTruthy();
+});
+
+it(&#x27;should generate an object with a defined value&#x27;, () =&#x3e; {
+  const message = new formatFbMessage.Pause(1000).get();
+  expect(message).toEqual({
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.telegramTemplate.Photo" id="apidoc.element.claudia-bot-builder.telegramTemplate.Photo">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Photo
+        <span class="apidocSignatureSpan">(photo, caption)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Photo extends TelegramMessage {
+  constructor(photo, caption) {
+    super();
+    if (!photo || typeof photo !== &#x27;string&#x27;)
+      throw new Error(&#x27;Photo needs to be an ID or URL for Telegram Photo method&#x27;);
+
+    this.template = {
+      photo: photo
+    };
+
+    if (caption &#x26;&#x26; typeof caption === &#x27;string&#x27;)
+      this.template.caption = caption;
+  }
+
+  get() {
+    return {
+      method: &#x27;sendPhoto&#x27;,
+      body: this.template
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+describe(&#x27;Skype format message&#x27;, () =&#x3e; {
+  it(&#x27;should export an object&#x27;, () =&#x3e; {
+expect(typeof formatMessage).toBe(&#x27;object&#x27;);
+  });
+
+  describe(&#x27;Photo&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Photo</span>(&#x27;foo&#x27;);
+  expect(typeof formatMessage.Photo).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Photo).toBeTruthy();
+});
+
+it(&#x27;should throw an error if photo url is not provided&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.Photo()).toThrowError(&#x27;Photo is required for the Skype Photo template&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.telegramTemplate.Sticker" id="apidoc.element.claudia-bot-builder.telegramTemplate.Sticker">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Sticker
+        <span class="apidocSignatureSpan">(sticker)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Sticker extends TelegramMessage {
+  constructor(sticker) {
+    super();
+    if (!sticker || typeof sticker !== &#x27;string&#x27;)
+      throw new Error(&#x27;Sticker needs to be an URL or sticker ID for the Telegram Sticker method&#x27;);
+
+    this.template = {
+      sticker: sticker
+    };
+  }
+
+  get() {
+    return {
+      method: &#x27;sendSticker&#x27;,
+      body: this.template
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  });
+});
+  });
+
+  describe(&#x27;Sticker&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Sticker</span>(&#x27;https://some.file.com/address.md&#x27
+;);
+  expect(typeof formatMessage.Sticker).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Sticker).toBeTruthy();
+});
+
+it(&#x27;should throw an error if sticker URL or ID is not available&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.Sticker()).toThrowError(&#x27;Sticker needs to be an URL or sticker ID for the Telegram Sticker
+ method&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.telegramTemplate.Text" id="apidoc.element.claudia-bot-builder.telegramTemplate.Text">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Text
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Text extends TelegramMessage {
+  constructor(text) {
+    super();
+    if (!text || typeof text !== &#x27;string&#x27;)
+      throw new Error(&#x27;Text is required for Telegram Text template&#x27;);
+
+    this.template = {
+      text: text,
+      parse_mode: &#x27;Markdown&#x27;
+    };
+  }
+
+  disableMarkdown() {
+    delete this.template.parse_mode;
+    return this;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+describe(&#x27;Facebook format message&#x27;, () =&#x3e; {
+  it(&#x27;should export an object&#x27;, () =&#x3e; {
+expect(typeof formatFbMessage).toBe(&#x27;object&#x27;);
+  });
+
+  describe(&#x27;Text&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatFbMessage.<span class="apidocCodeKeywordSpan">Text</span>(&#x27;text&#x27;);
+  expect(typeof formatFbMessage.Text).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatFbMessage.Text).toBeTruthy();
+});
+
+it(&#x27;should throw an error if text is not provided&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatFbMessage.Text()).toThrowError(&#x27;Text is required for text template&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.telegramTemplate.Venue" id="apidoc.element.claudia-bot-builder.telegramTemplate.Venue">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.telegramTemplate.</span>Venue
+        <span class="apidocSignatureSpan">(latitude, longitude, title, address)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Venue extends TelegramMessage {
+  constructor(latitude, longitude, title, address) {
+    super();
+    if (!latitude || !longitude || typeof latitude !== &#x27;number&#x27; || typeof longitude !== &#x27;number&#x27;)
+      throw new Error(&#x27;Latitude and longitude are required for Telegram Venue template&#x27;);
+
+    if (!title || typeof title !== &#x27;string&#x27;)
+      throw new Error(&#x27;Title is required for Telegram Venue template&#x27;);
+
+    if (!address || typeof address !== &#x27;string&#x27;)
+      throw new Error(&#x27;Address is required for Telegram Venue template&#x27;);
+
+    this.template = {
+      latitude: latitude,
+      longitude: longitude,
+      title: title,
+      address: address
+    };
+  }
+
+  addFoursqare(foursquareId) {
+    if (!foursquareId)
+      throw new Error(&#x27;Foursquare ID is required for Telegram Venue template addFoursqare method&#x27;);
+
+    this.template.foursquare_id = foursquareId;
+
+    return this;
+  }
+
+  get() {
+    return {
+      method: &#x27;sendVenue&#x27;,
+      body: this.template
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  });
+});
+  });
+
+  describe(&#x27;Venue&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Venue</span>(20, 44, &#x27;Belgrade&#x27;, &#x27;Belgrade
+, Serbia&#x27;);
+  expect(typeof formatMessage.Venue).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Venue).toBeTruthy();
+});
+
+it(&#x27;should throw an error if latitude and longitude are not valid&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.Venue()).toThrowError(&#x27;Latitude and longitude are required for Telegram Venue template
+&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.claudia-bot-builder.token" id="apidoc.module.claudia-bot-builder.token">module claudia-bot-builder.token</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.token.clearToken" id="apidoc.element.claudia-bot-builder.token.clearToken">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.token.</span>clearToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clearToken() {
+  token = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.token.getToken" id="apidoc.element.claudia-bot-builder.token.getToken">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.token.</span>getToken
+        <span class="apidocSignatureSpan">(appId, appSecret)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getToken(appId, appSecret){
+  if (!token){
+    return requestToken(appId, appSecret)
+      .then(response =&#x3e; {
+        var body = JSON.parse(response.body);
+        token = body.access_token;
+        return token;
+      });
+  }
+  return Promise.resolve(token);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        &#x27;content-length&#x27;: Buffer.byteLength(credentialsData)
+      },
+      body: credentialsData
+    }));
+
+    done();
+  });
+  token.<span class="apidocCodeKeywordSpan">getToken</span>(&#x27;someSkypeAppId123&#x27;, &#x27;someSkypePrivateKey123&#x27;);
+});
+
+it(&#x27;does not resolve before the https endpoint responds&#x27;, done =&#x3e; {
+  https.request.pipe(done);
+  token.getToken(&#x27;someSkypeAppId123&#x27;, &#x27;someSkypePrivateKey123&#x27;).then(done.fail, done.fail);
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.claudia-bot-builder.viberTemplate" id="apidoc.module.claudia-bot-builder.viberTemplate">module claudia-bot-builder.viberTemplate</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.viberTemplate.Contact" id="apidoc.element.claudia-bot-builder.viberTemplate.Contact">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>Contact
+        <span class="apidocSignatureSpan">(name, phoneNumber)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Contact extends ViberMessage {
+  constructor(name, phoneNumber) {
+    super();
+    if (!name || !phoneNumber || typeof name !== &#x27;string&#x27; || typeof phoneNumber !== &#x27;string&#x27;)
+      throw new Error(&#x27;Contact name and phone number are required for the Viber Contact template&#x27;);
+
+    this.template = {
+      type: &#x27;contact&#x27;,
+      contact: {
+        name: name,
+        phone_number: phoneNumber
+      }
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  });
+});
+  });
+
+  describe(&#x27;Contact&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Contact</span>(&#x27;123456789&#x27;, &#x27;John&#x27;);
+  expect(typeof formatMessage.Contact).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Contact).toBeTruthy();
+});
+
+it(&#x27;should throw an error if phone number is not available&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.Contact()).toThrowError(&#x27;Phone number needs to be a string for Telegram Contact method
+&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.viberTemplate.File" id="apidoc.element.claudia-bot-builder.viberTemplate.File">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>File
+        <span class="apidocSignatureSpan">(media, size, fileName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class File extends ViberMessage {
+  constructor(media, size, fileName) {
+    super();
+    if (!media || typeof media !== &#x27;string&#x27;)
+      throw new Error(&#x27;Media needs to be an URL for the Viber File method&#x27;);
+
+    if (!size || typeof size !== &#x27;number&#x27;)
+      throw new Error(&#x27;Size needs to be a Number representing size in bytes for the Viber File method&#x27;);
+
+    if (!fileName || typeof fileName !== &#x27;string&#x27;)
+      throw new Error(&#x27;File name needs to be a String representing the name of the file for the Viber File method&#x27;);
+
+    this.template = {
+      type: &#x27;file&#x27;,
+      media: media,
+      size: size,
+      file_name: fileName
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    claudiaPause: 500
+  });
+});
+  });
+
+  describe(&#x27;File&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">File</span>(&#x27;https://some.file.com/address.md&#x27;);
+  expect(typeof formatMessage.File).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.File).toBeTruthy();
+});
+
+it(&#x27;should throw an error if file url is not available&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.File()).toThrowError(&#x27;Document needs to be an URL for the Telegram File method&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.viberTemplate.Location" id="apidoc.element.claudia-bot-builder.viberTemplate.Location">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>Location
+        <span class="apidocSignatureSpan">(latitude, longitude)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Location extends ViberMessage {
+  constructor(latitude, longitude) {
+    super();
+    if (!latitude || !longitude || typeof latitude !== &#x27;number&#x27; || typeof longitude !== &#x27;number&#x27;)
+      throw new Error(&#x27;Latitude and longitude are required for the Viber Location template&#x27;);
+
+    this.template = {
+      type: &#x27;location&#x27;,
+      location: {
+        lat: latitude,
+        lon: longitude
+      }
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  });
+});
+  });
+
+  describe(&#x27;Location&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Location</span>(20, 44);
+  expect(typeof formatMessage.Location).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Location).toBeTruthy();
+});
+
+it(&#x27;should throw an error if latitude and longitude are not valid&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.Location()).toThrowError(&#x27;Latitude and longitude are required for Telegram Location template
+&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.viberTemplate.Photo" id="apidoc.element.claudia-bot-builder.viberTemplate.Photo">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>Photo
+        <span class="apidocSignatureSpan">(photo, caption)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Photo extends ViberMessage {
+  constructor(photo, caption) {
+    super();
+    if (!photo || typeof photo !== &#x27;string&#x27;)
+      throw new Error(&#x27;Photo needs to be an URL for the Viber Photo method&#x27;);
+    caption = caption || &#x27;&#x27;;
+    if (caption &#x26;&#x26; typeof caption !== &#x27;string&#x27;)
+      throw new Error(&#x27;Text needs to be a string for Viber Photo method&#x27;);
+
+    this.template = {
+      type: &#x27;picture&#x27;,
+      media: photo,
+      text: caption
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+describe(&#x27;Skype format message&#x27;, () =&#x3e; {
+  it(&#x27;should export an object&#x27;, () =&#x3e; {
+expect(typeof formatMessage).toBe(&#x27;object&#x27;);
+  });
+
+  describe(&#x27;Photo&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Photo</span>(&#x27;foo&#x27;);
+  expect(typeof formatMessage.Photo).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Photo).toBeTruthy();
+});
+
+it(&#x27;should throw an error if photo url is not provided&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.Photo()).toThrowError(&#x27;Photo is required for the Skype Photo template&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.viberTemplate.Sticker" id="apidoc.element.claudia-bot-builder.viberTemplate.Sticker">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>Sticker
+        <span class="apidocSignatureSpan">(stickerId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Sticker extends ViberMessage {
+  constructor(stickerId) {
+    super();
+    if (!stickerId || typeof stickerId !== &#x27;number&#x27;)
+      throw new Error(&#x27;Sticker ID and &#x27;);
+
+    this.template = {
+      type: &#x27;sticker&#x27;,
+      sticker_id: stickerId
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  });
+});
+  });
+
+  describe(&#x27;Sticker&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Sticker</span>(&#x27;https://some.file.com/address.md&#x27
+;);
+  expect(typeof formatMessage.Sticker).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Sticker).toBeTruthy();
+});
+
+it(&#x27;should throw an error if sticker URL or ID is not available&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.Sticker()).toThrowError(&#x27;Sticker needs to be an URL or sticker ID for the Telegram Sticker
+ method&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.viberTemplate.Text" id="apidoc.element.claudia-bot-builder.viberTemplate.Text">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>Text
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Text extends ViberMessage {
+  constructor(text) {
+    super();
+    if (!text || typeof text !== &#x27;string&#x27;)
+      throw new Error(&#x27;Text is required for the Viber Text template&#x27;);
+
+    this.template = {
+      type: &#x27;text&#x27;,
+      text: text
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+describe(&#x27;Facebook format message&#x27;, () =&#x3e; {
+  it(&#x27;should export an object&#x27;, () =&#x3e; {
+expect(typeof formatFbMessage).toBe(&#x27;object&#x27;);
+  });
+
+  describe(&#x27;Text&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatFbMessage.<span class="apidocCodeKeywordSpan">Text</span>(&#x27;text&#x27;);
+  expect(typeof formatFbMessage.Text).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatFbMessage.Text).toBeTruthy();
+});
+
+it(&#x27;should throw an error if text is not provided&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatFbMessage.Text()).toThrowError(&#x27;Text is required for text template&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.viberTemplate.Url" id="apidoc.element.claudia-bot-builder.viberTemplate.Url">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>Url
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Url extends ViberMessage {
+  constructor(url) {
+    super();
+    if (!url || !isUrl(url) || typeof url !== &#x27;string&#x27;)
+      throw new Error(&#x27;Media needs to be an URL for the Viber URL method&#x27;);
+
+    if (url.length &#x3e; 2000)
+      throw new Error(&#x27;Media URL can not be longer than 2000 characters for the Viber URL method&#x27;);
+
+    this.template = {
+      type: &#x27;url&#x27;,
+      media: url
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  });
+});
+  });
+
+  describe(&#x27;Url&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Url</span>(&#x27;https://claudiajs.com&#x27;);
+  expect(typeof formatMessage.Url).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Url).toBeTruthy();
+});
+
+it(&#x27;should throw an error if media url is not valid&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.Url()).toThrowError(&#x27;Media needs to be an URL for the Viber URL method&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.claudia-bot-builder.viberTemplate.Video" id="apidoc.element.claudia-bot-builder.viberTemplate.Video">
+        function <span class="apidocSignatureSpan">claudia-bot-builder.viberTemplate.</span>Video
+        <span class="apidocSignatureSpan">(media, size, duration)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Video extends ViberMessage {
+  constructor(media, size, duration) {
+    super();
+    if (!media || typeof media !== &#x27;string&#x27;)
+      throw new Error(&#x27;Media needs to be an URL for Viber Video method&#x27;);
+
+    if (!size || typeof size !== &#x27;number&#x27;)
+      throw new Error(&#x27;Size needs to be a Number representing size in bytes for Viber Video method&#x27;);
+
+    this.template = {
+      type: &#x27;video&#x27;,
+      media: media,
+      size: size
+    };
+
+    if (duration &#x26;&#x26; typeof duration === &#x27;number&#x27;)
+      this.template.duration = duration;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    text: &#x27;Claudia.js photo text&#x27;
+  });
+});
+  });
+
+  describe(&#x27;Video&#x27;, () =&#x3e; {
+it(&#x27;should be a class&#x27;, () =&#x3e; {
+  const message = new formatMessage.<span class="apidocCodeKeywordSpan">Video</span>(&#x27;https://vimeo.com/170647056&#x27;, 25600
+, 156);
+  expect(typeof formatMessage.Video).toBe(&#x27;function&#x27;);
+  expect(message instanceof formatMessage.Video).toBeTruthy();
+});
+
+it(&#x27;should throw an error if video url is not available&#x27;, () =&#x3e; {
+  expect(() =&#x3e; new formatMessage.Video()).toThrowError(&#x27;Media needs to be an URL for Viber Video method&#x27;);
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
